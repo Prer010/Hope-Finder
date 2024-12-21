@@ -1,0 +1,51 @@
+.container {
+  padding: 16px;
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.inputs, form {
+  display : flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+}
+
+label {
+  display: block;
+  width: 150px; /* Fixed width for labels */
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+input[type=text], input[type=password], input[type=date], input[type=textarea]{
+  width: 90%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: block;
+  background: #FDF7F4;
+}
+
+.submit_button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+  opacity: 0.9;
+  display: block;
+  margin: 20px auto; /* Center the submit button */
+}
+
+.container_sign_in {
+  text-align: center;
+}
+
+
+/* Style for headings to maintain center alignment */
+h1 {
+  text-align: center;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/Logo.jpg">
+
+    <title>Register</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+<form action="action1_page.php">
+      <div class="form-groups">
+<div class="container">
+
+  <h1>Organization Registration</h1>
+  <hr>
+
+        <div class="item">
+        <label for="organization-name"><br><b>Organization Name:</b></br></label>
+        <input type="text" id="organization-name" name="organization-name" required>
+       </div>
+
+        <div class="item">
+        <label for="type-of-organization"> <br><b>Type of Organization:</b></br></label>
+        <select id="type-of-organization" name="type-of-organization" required>
+          <option value="">Select</option>
+          <option value="non-profit">Non-Profit</option>
+          <option value="government-agency">Government Agency</option>
+          <option value="community-group">Community Group</option>
+        </select>
+      </div>
+<br>
+
+<div class="item">
+<label for="email"><br><b>Email:</b></br></label>
+<input type="text"id="email"placeholder="enter your email"required> 
+</div>
+
+<div class="item">
+<label for="phone"><br><b>Phone Number:</b></br></label>
+<input type="text"name="country_code"value="+91">
+</div>
+
+<div class="item">
+<label for="address"><br><b>Address:</b></br></label>
+<input type="textarea"name="address">
+</div>
+
+<div class="item">
+<label for="organization"> <br><b>Description of Services/Support offered:</b></br></label>
+<select id="organization" name="organization" required>
+ <option value="">Select</option>
+ <option value="Search and rescue">Search and rescue</option>
+ <option value="Counselling">Government Agency</option>
+ <option value="Financial assistances">Financial assistances</option>
+</select>
+</div>
+
+<div class="item">
+<label for="Expertise"><br><b>Description of Services/Support offered:</b></br></label>
+<select id="Expertise" name="Expertise" required>
+ <option value="">Select</option>
+ <option value="missing children">missing children</option>
+ <option value="missing adults">missing adults</option>
+ <option value="disaster response">disaster response</option>
+</select>
+</div>
+</div>
+
+<br>
+<hr>
+<br>
+   <button type="submit" class="submit_button">Register</button>
+   </div>
+    <br><br>
+
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/Logo.jpg">
+
+    <title>Hope Finder | Register</title>
+    <link rel="stylesheet"href="./login.css">
+</head>
+<body>
+<form action="action_page.php">
+<div class="container">
+ <h1>Registration form</h1>
+ <hr>
+
+ <div class="item">
+<label for="first"><br>First Name:</br></label>
+<input type="text"id="first_name"placeholder="enter your first name"required>
+</div>
+
+<div class="item">
+<label for="last"><br>Last Name:</br></label>
+<input type="text"id="last_name"placeholder="enter your last name"required>
+</div>
+
+<div class="item">
+<label for="email"><br>Email:</br></label>
+<input type="text"id="email"placeholder="enter your email"required>
+</div>
+
+<div class="item">
+<label for="pass"><br>Password:</br></label>
+<input type="password"id="password"placeholder="enter your password"required>
+</div>
+
+<div class="item">
+<label for="date_of_birth"><br>Date Of Birth:</br></label>
+<input type="date"id="date_of_birth"required>
+</div>
+
+<div class="item">
+<label for="gender"><br>Gender:</br></label>
+<input type="radio"name="gender"id="male">Male<br>
+<input type="radio"name="gender"od="feamle">Female<br>
+<input type="radio"name="gender"id="others">Others<br>
+</div>
+
+<div class="item">
+<label for="phone"><br>Phone Number:</br></label>
+<input type="text"name="country_code"value="+91">
+</div>
+
+<div class="item">
+<label for="address"><br>Current Address:</br></label>
+<input type="textarea"name="address">
+</div>
+
+<br>
+<hr>
+<br>
+<a href = "./landing.html"><button type="submit"class="submit_button">Submit</button></a>
+</div>
+
+<div class="container_sign_in">
+    <p>Are you an organisation? <a href="organsation registration.html">Sign in</a></p>
+    </div>
+    <br><br>
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const userData = {
+            firstName: document.getElementById('first_name').value,
+            lastName: document.getElementById('last_name').value,
+            email: document.getElementById('email').value,
+            password: document.getElementById('password').value,
+            dateOfBirth: document.getElementById('date_of_birth').value,
+            gender: document.querySelector('input[name="gender"]:checked').value,
+            phoneNumber: document.querySelector('input[name="country_code"]').value,
+            address: document.querySelector('input[name="address"]').value
+        };
+    
+        try {
+            const response = await fetch('http://localhost:5000/api/users/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userData)
+            });
+            
+            if (response.ok) {
+                window.location.href = '/login.html';
+            } else {
+                throw new Error('Registration failed');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    });
+    </script>
+</body>
+</html>

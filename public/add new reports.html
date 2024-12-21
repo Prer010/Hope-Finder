@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/Logo.jpg">
+
+    <title>Report Details</title>
+    <style>
+         body {
+                    font-family: Arial, sans-serif;
+                    margin: 0;
+                    padding: 0;
+                    background-color: #f4f4f4;
+                }
+                
+                .container {
+                    max-width: 800px;
+                    margin: 40px auto;
+                    padding: 20px;
+                    background-color: #fff;
+                    border: 1px solid #ddd;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                }
+                
+                h1 {
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+                
+                section {
+                    margin-bottom: 20px;
+                }
+                
+                h2 {
+                    margin-top: 0;
+                }
+                
+                .form-group {
+                    margin-bottom: 15px;
+                }
+                
+                label {
+                    display: block;
+                    margin-bottom: 5px;
+                }
+                
+                input[type="text"], input[type="number"], input[type="date"], input[type="datetime-local"], input[type="tel"], input[type="email"], select, textarea {
+                    width: 100%;
+                    padding: 10px;
+                    margin-bottom: 15px;
+                    border: 1px solid #ccc;
+                }
+.fir-pdf-upload {
+  margin-top: 20px;
+}
+
+.fir-pdf-upload label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.fir-pdf-upload input[type="file"] {
+  display: none;
+}
+
+.fir-pdf-upload .upload-button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.fir-pdf-upload .upload-button:hover {
+  background-color: #337b36;
+}
+
+.fir-pdf-upload .file-name {
+  margin-left: 10px;
+  font-size: 16px;
+  color: #666;
+}
+
+                button[type="submit"] {
+                    background-color: #02b02e;
+                    color: #fff;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    box-shadow: 0 2px 4px rgba(5, 142, 58, 0.623);
+                }
+                
+                button[type="submit"]:hover {
+                    background-color: #065f1c;
+                }
+
+.footer {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 1rem;
+}
+
+.footer-section h3 {
+    color: #01761e;
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-section a {
+    color: #333;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #01761e;
+}
+                
+                @media only screen and (max-width: 768px) {
+                    .container {
+                        margin: 20px auto;
+                    }
+                }
+                
+                @media only screen and (max-width: 480px) {
+                    .container {
+                        margin: 10px auto;
+                    }
+                    input[type="text"], input[type="number"], input[type="date"], input[type="datetime-local"], input[type="tel"], input[type="email"], select, textarea {
+                        padding: 5px;
+                    }
+                }
+                
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Report Details</h1>
+        <form id="report-form">
+            <!-- Missing Person's Information -->
+            <section>
+                <h2>Missing Person's Information</h2>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Select</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address" required></textarea>
+                </div>
+            </section>
+
+            <!-- Circumstances of Disappearance -->
+            <section>
+                <h2>Circumstances of Disappearance</h2>
+                <div class="form-group">
+                    <label for="disappearance-date">Date and Time:</label>
+                    <input type="datetime-local" id="disappearance-date" name="disappearance-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="disappearance-location">Location:</label>
+                    <input type="text" id="disappearance-location" name="disappearance-location" required>
+                </div>
+                <div class="form-group">
+                    <label for="disappearance-description">Description of events:</label>
+                    <textarea id="disappearance-description" name="disappearance-description" required></textarea>
+                </div>
+            </section>
+
+            <!-- Physical Description -->
+            <section>
+                <h2>Physical Description</h2>
+                <div class="form-group">
+                    <label for="height">Height:</label>
+                    <input type="number" id="height" name="height" required>
+                </div>
+                <div class="form-group">
+                    <label for="weight">Weight:</label>
+                    <input type="number" id="weight" name="weight" required>
+                </div>
+                <div class="form-group">
+                    <label for="hair-color">Hair Color:</label>
+                    <input type="text" id="hair-color" name="hair-color" required>
+                </div>
+                <div class="form-group">
+                    <label for="eye-color">Eye Color:</label>
+                    <input type="text" id="eye-color" name="eye-color" required>
+                </div>
+                <div class="form-group">
+                    <label for="distinguishing-features">Distinguishing features:</label>
+                    <textarea id="distinguishing-features" name="distinguishing-features" required></textarea>
+                </div>
+            </section>
+
+            <!-- Contact Information -->
+            <section>
+                <h2>Contact Information</h2>
+                <div class="form-group">
+                    <label for="reporter-name">Reporter's Name:</label>
+                    <input type="text" id="reporter-name" name="reporter-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone-number">Phone Number:</label>
+                    <input type="tel" id="phone-number" name="phone-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="email-address">Email Address:</label>
+                    <input type="email" id="email-address" name="email-address" required>
+                </div>
+            </section>
+
+            <!-- FIR Details -->
+            <section>
+                <h2>FIR Details</h2>
+                <div class="form-group">
+                <label for="fir_number">FIR Number</label>
+                <textarea class="form-control" id="fir_details" name="fir_details"></textarea>
+                </div>
+
+                <div class="form-group fir-pdf-upload">
+                <label for="fir_pdf">Upload FIR Copy (PDF)</label>
+                <input type="file" id="fir_pdf" name="fir_pdf" accept="application/pdf">
+                <button class="upload-button">Upload</button>
+                <span class="file-name"></span>
+                </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit Report</button>
+
+                </form>
+                </div>
+                
+                                   
+                <footer class="footer">
+                    <div class="footer-content">
+                        <div class="footer-section">
+                            <h3>Hope Finder</h3>
+                            <p>Reuniting Families, Restoring Hope</p>
+                            <p>&copy; 2024 Hope Finder. All rights reserved.</p>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Quick Links</h3>
+                            <ul>
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/add new reports.html">Report Missing Person</a></li>
+                                <li><a href="/login.html">Login</a></li>
+                                <li><a href="/register.html">Register</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Contact Us</h3>
+                            <p>Email: support@hopefinder.com</p>
+                            <p>Emergency: 911</p>
+                            <p>Missing Persons Hotline: 1-800-THE-LOST</p>
+                        </div>
+                    </div>
+                </footer>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+                <script src = "index2.js"></script>
+            </body>
+            </html>
